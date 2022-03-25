@@ -12,7 +12,7 @@ After installing you should already have the command available for usage. Run `n
 
 ## Development
 
-For creating new plugins follow this instructions.
+For creating new plugins follow this instructions below.
 
 1. Install Poetry:
 
@@ -22,7 +22,7 @@ For creating new plugins follow this instructions.
 
 `poetry install`
 
-After having the environment setted we can start developing. We will use `click` for extending Nile commands. All new commands must be implemented as `click.commands`. Find below an implementation design template:
+After having the environment setted up we can start developing. We will use `click` for extending Nile commands. All new commands must be implemented as `click.commands`. Find below an implementation design template:
 
 ```python
 # First, import click dependency

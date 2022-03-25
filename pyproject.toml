@@ -10,7 +10,7 @@ version = "0.1.0"
 description = "Nile plugin for greeting"
 readme = "README.md"
 authors = [
-  "Fran Algaba <f.algaba.work@gmail..com>"
+  "Fran Algaba <f.algaba.work@gmail.com>"
 ]
 license = "MIT"
 # Pypi classifiers: https://pypi.org/classifiers/
