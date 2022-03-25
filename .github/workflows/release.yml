@@ -24,25 +24,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set up Python {% raw %}${{ matrix.python-version }}{% endraw %}
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
+          python-version: ${{ matrix.python-version }}
 
       - name: Cache Python environment
         uses: actions/cache@v2
         with:
           path: .venv
-          key: {% raw %}venv-${{ runner.os }}-py${{ matrix.python-version }}-${{ hashFiles('poetry.lock') }}{% endraw %}
+          key: venv-${{ runner.os }}-py${{ matrix.python-version }}-${{ hashFiles('poetry.lock') }}
 
       - name: Install Poetry
         run: pip install --no-input poetry
 
       - name: Install Python environment
         run: |
-          {%- if cookiecutter.private_package_repository_name %}
-          poetry config http-basic.{{ cookiecutter.private_package_repository_name }} "{% raw %}${{{% endraw %} secrets.POETRY_HTTP_BASIC_{{ cookiecutter.private_package_repository_name|upper }}_USERNAME }}" "{% raw %}${{{% endraw %} secrets.POETRY_HTTP_BASIC_{{ cookiecutter.private_package_repository_name|upper }}_PASSWORD }}"
-          {%- endif %}
           poetry config virtualenvs.in-project true
           poetry install --no-interaction
 
