@@ -47,4 +47,4 @@ jobs:
         run: poetry run pytest tests
 
       - name: Release
-        run: poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }} && poetry publish
+        run: poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }} && poetry publish --build
