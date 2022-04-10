@@ -12,7 +12,7 @@ After installing you should already have the command available for usage. Run `n
 
 ## Development
 
-For creating new plugins follow this instructions below.
+For creating new plugins follow this instructions below. Please also ensure that you are using a python verion ```python3.7```.
 
 1. Install Poetry:
 
